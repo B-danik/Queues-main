@@ -59,12 +59,9 @@ namespace Queues
             this.Simul_lable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ListKas3 = new System.Windows.Forms.ListBox();
-            this.ListKas2 = new System.Windows.Forms.ListBox();
             this.ListKas1 = new System.Windows.Forms.ListBox();
             this.dgv_klient = new System.Windows.Forms.DataGridView();
             this.Name_klient = new System.Windows.Forms.Label();
-            this.Name_kas3 = new System.Windows.Forms.Label();
             this.Name_kas2 = new System.Windows.Forms.Label();
             this.Name_kas1 = new System.Windows.Forms.Label();
             this.regularTime_timer = new System.Windows.Forms.Timer(this.components);
@@ -72,7 +69,6 @@ namespace Queues
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
-            this.kas3_timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
@@ -474,18 +470,15 @@ namespace Queues
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.ListKas3);
-            this.panel2.Controls.Add(this.ListKas2);
             this.panel2.Controls.Add(this.ListKas1);
             this.panel2.Controls.Add(this.dgv_klient);
             this.panel2.Controls.Add(this.Name_klient);
-            this.panel2.Controls.Add(this.Name_kas3);
             this.panel2.Controls.Add(this.Name_kas2);
             this.panel2.Controls.Add(this.Name_kas1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(194, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1067, 573);
+            this.panel2.Size = new System.Drawing.Size(818, 573);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -494,43 +487,11 @@ namespace Queues
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel5.BackColor = System.Drawing.Color.Blue;
-            this.panel5.Location = new System.Drawing.Point(672, -13);
+            this.panel5.Location = new System.Drawing.Point(452, 2);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 595);
             this.panel5.TabIndex = 17;
-            // 
-            // ListKas3
-            // 
-            this.ListKas3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ListKas3.BackColor = System.Drawing.Color.SkyBlue;
-            this.ListKas3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListKas3.Font = new System.Drawing.Font("Arial Narrow", 40.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListKas3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.ListKas3.FormattingEnabled = true;
-            this.ListKas3.ItemHeight = 64;
-            this.ListKas3.Location = new System.Drawing.Point(496, 81);
-            this.ListKas3.Name = "ListKas3";
-            this.ListKas3.Size = new System.Drawing.Size(149, 448);
-            this.ListKas3.TabIndex = 7;
-            this.ListKas3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas3_DrawItem);
-            // 
-            // ListKas2
-            // 
-            this.ListKas2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ListKas2.BackColor = System.Drawing.Color.SkyBlue;
-            this.ListKas2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListKas2.Font = new System.Drawing.Font("Arial Narrow", 40F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.ListKas2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.ListKas2.FormattingEnabled = true;
-            this.ListKas2.ItemHeight = 63;
-            this.ListKas2.Location = new System.Drawing.Point(267, 81);
-            this.ListKas2.Name = "ListKas2";
-            this.ListKas2.Size = new System.Drawing.Size(150, 443);
-            this.ListKas2.TabIndex = 6;
-            this.ListKas2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas2_DrawItem);
             // 
             // ListKas1
             // 
@@ -542,7 +503,7 @@ namespace Queues
             this.ListKas1.ForeColor = System.Drawing.Color.DarkOrange;
             this.ListKas1.FormattingEnabled = true;
             this.ListKas1.ItemHeight = 63;
-            this.ListKas1.Location = new System.Drawing.Point(39, 81);
+            this.ListKas1.Location = new System.Drawing.Point(146, 81);
             this.ListKas1.Name = "ListKas1";
             this.ListKas1.Size = new System.Drawing.Size(150, 443);
             this.ListKas1.TabIndex = 5;
@@ -567,35 +528,24 @@ namespace Queues
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_klient.Location = new System.Drawing.Point(705, 76);
+            this.dgv_klient.Location = new System.Drawing.Point(477, 81);
             this.dgv_klient.Name = "dgv_klient";
             this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
             this.dgv_klient.RowHeadersWidth = 51;
             this.dgv_klient.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_klient.Size = new System.Drawing.Size(353, 462);
+            this.dgv_klient.Size = new System.Drawing.Size(327, 462);
             this.dgv_klient.TabIndex = 4;
             // 
             // Name_klient
             // 
             this.Name_klient.AutoSize = true;
             this.Name_klient.Font = new System.Drawing.Font("Arial Narrow", 28F, System.Drawing.FontStyle.Bold);
-            this.Name_klient.Location = new System.Drawing.Point(700, 7);
+            this.Name_klient.Location = new System.Drawing.Point(479, 9);
             this.Name_klient.Name = "Name_klient";
             this.Name_klient.Size = new System.Drawing.Size(157, 44);
             this.Name_klient.TabIndex = 3;
             this.Name_klient.Text = "Клиенты";
-            // 
-            // Name_kas3
-            // 
-            this.Name_kas3.AutoSize = true;
-            this.Name_kas3.Font = new System.Drawing.Font("Arial Narrow", 28F, System.Drawing.FontStyle.Bold);
-            this.Name_kas3.ForeColor = System.Drawing.Color.GreenYellow;
-            this.Name_kas3.Location = new System.Drawing.Point(490, 0);
-            this.Name_kas3.Name = "Name_kas3";
-            this.Name_kas3.Size = new System.Drawing.Size(168, 44);
-            this.Name_kas3.TabIndex = 2;
-            this.Name_kas3.Text = "Касса №3";
             // 
             // Name_kas2
             // 
@@ -642,15 +592,11 @@ namespace Queues
             // 
             this.kas2_timer.Tick += new System.EventHandler(this.kas2_timer_Tick);
             // 
-            // kas3_timer
-            // 
-            this.kas3_timer.Tick += new System.EventHandler(this.kas3_timer_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 573);
+            this.ClientSize = new System.Drawing.Size(1012, 573);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -680,13 +626,10 @@ namespace Queues
         private System.Windows.Forms.ListBox ListKas1;
         private System.Windows.Forms.DataGridView dgv_klient;
         private System.Windows.Forms.Label Name_klient;
-        private System.Windows.Forms.Label Name_kas3;
         private System.Windows.Forms.Label Name_kas2;
         private System.Windows.Forms.Label Name_kas1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.ListBox ListKas3;
-        private System.Windows.Forms.ListBox ListKas2;
         private System.Windows.Forms.Timer regularTime_timer;
         private System.Windows.Forms.Label refuse_label;
         private System.Windows.Forms.Label door_label;
@@ -698,7 +641,6 @@ namespace Queues
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Timer kas1_timer;
         private System.Windows.Forms.Timer kas2_timer;
-        private System.Windows.Forms.Timer kas3_timer;
         private System.Windows.Forms.Button btn_stop;
         private System.Windows.Forms.Label accepted_label;
         private System.Windows.Forms.Label Simul_text;
