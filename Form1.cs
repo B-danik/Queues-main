@@ -137,9 +137,9 @@ namespace Queues
         Time stopTime;
         Time startTime;
         int custIndex = 1;
-        ListBox[] listbox = new ListBox[3];
-        Timer[] kas_timer = new Timer[3];
-        Label[] kas_label = new Label[3];
+        ListBox[] listbox = new ListBox[1];
+        Timer[] kas_timer = new Timer[2];
+        Label[] kas_label = new Label[2];
         int refuse = 0;
         int accepted = 0;
         double speed = 1;
@@ -205,7 +205,7 @@ namespace Queues
                 return status;
             }
         }
-        Queue<Customer>[] custQueue = new Queue<Customer>[3];
+        Queue<Customer>[] custQueue = new Queue<Customer>[1];
         public Form1()
         {
             InitializeComponent();
@@ -214,20 +214,19 @@ namespace Queues
             
             
             custQueue[0] = new Queue<Customer>();
-            custQueue[1] = new Queue<Customer>();
-            custQueue[2] = new Queue<Customer>();
+                   
 
             listbox[0] = ListKas1;
-            listbox[1] = ListKas2;
-            listbox[2] = ListKas3;
+         
+        
 
             kas_timer[0] = kas1_timer;
             kas_timer[1] = kas2_timer;
-            kas_timer[2] = kas3_timer;
+         
 
             kas_label[0] = Name_kas1;
             kas_label[1] = Name_kas2;
-            kas_label[2] = Name_kas3;
+           
 
             dgv_klient.Columns.Add("0", "№");
             dgv_klient.Columns.Add("1", "Пришел");
@@ -242,10 +241,8 @@ namespace Queues
 
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
-            ListKas2.DrawMode = DrawMode.OwnerDrawFixed;
-            ListKas2.DrawItem += ListKas2_DrawItem;
-            ListKas3.DrawMode = DrawMode.OwnerDrawFixed;
-            ListKas3.DrawItem += ListKas3_DrawItem;
+     
+           
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {           
@@ -324,7 +321,7 @@ namespace Queues
                 {
                     door_label.Text = "Door: " + "Close";
                     addClient_timer.Enabled = false;                
-                    if (Name_kas1.ForeColor == Color.GreenYellow && Name_kas2.ForeColor == Color.GreenYellow && Name_kas3.ForeColor == Color.GreenYellow && ListKas1.Items.Count == 0 && ListKas2.Items.Count == 0 && ListKas3.Items.Count == 0)
+                    if (Name_kas1.ForeColor == Color.GreenYellow && Name_kas2.ForeColor == Color.GreenYellow && ListKas1.Items.Count == 0)
                     {
                         stopbox.Enabled = true;
                         startbox.Enabled = true;
@@ -341,11 +338,11 @@ namespace Queues
                 }
             }
 
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < 1; i++)
             {
                 Random x = new Random();
-                int n = (int)(x.Next(4000, 6000)/speed);
-                if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
+                int n = (int)(x.Next(1000, 5000)/speed);
+                if (custQueue[i].Count != 0 && kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
                     labael_enter(kas_label[i], i);
@@ -361,25 +358,8 @@ namespace Queues
             }catch (Exception){
                 return;
             }
-        }
-        private void ListKas2_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            try { 
-            TextRenderer.DrawText(e.Graphics, ListKas2.Items[e.Index].ToString(), e.Font,
-                           e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
-            }catch (Exception){
-                return;
-            }
-}
-        private void ListKas3_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            try { 
-            TextRenderer.DrawText(e.Graphics, ListKas3.Items[e.Index].ToString(), e.Font,
-                                      e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
-            }catch (Exception){
-                return;
-            }
-        }
+        }     
+      
 
         private void addClient_timer_Tick(object sender, EventArgs e)
         { 
@@ -397,16 +377,8 @@ namespace Queues
             
             int minqueu = ListKas1.Items.Count;
             int minIndex = 0;
-            if (minqueu > ListKas2.Items.Count)
-            {
-                minqueu = ListKas2.Items.Count;
-                minIndex = 1;
-            }
-            if (minqueu > ListKas3.Items.Count)
-            {
-                minqueu = ListKas3.Items.Count;
-                minIndex = 2;
-            }
+         
+           
             if (minqueu < 6)
             {
                 cust.setStatus(minIndex + 1);
@@ -422,9 +394,7 @@ namespace Queues
                 cust.setTimeStop(regularTime);
                 dgv_enter(cust);                
             }
-                custIndex++;
-           
-           
+                custIndex++;  
             
         }
 
@@ -438,16 +408,12 @@ namespace Queues
             kas_dgv(2);
         }
 
-        private void kas3_timer_Tick(object sender, EventArgs e)
-        {
-            kas_dgv(3);
-        }
+    
         private void kas_dgv(int kasIndex)
         {
             kasIndex--;
-            Customer cust = custQueue[kasIndex].Dequeue();
+            Customer cust = custQueue[0].Dequeue();
             cust.setTimeStop(regularTime);
-
             dgv_enter(cust);
             // зеленый
             kas_label[kasIndex].ForeColor = Color.GreenYellow;
@@ -458,12 +424,22 @@ namespace Queues
         }
         private void labael_enter(Label label,int Index)
         {
-            Customer cust = custQueue[Index].Peek();
-            label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
-            listbox[Index].Items.RemoveAt(0);
-            // крассный
-            kas_label[Index].ForeColor = Color.DarkRed;
-            kas_timer[Index].Enabled = true;
+            Customer cust = custQueue[0].Peek();
+            
+                label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
+                listbox[Index].Items.RemoveAt(0);
+                // крассный
+                kas_label[Index].ForeColor = Color.DarkRed;
+                kas_timer[Index].Enabled = true;
+
+            if (ListKas1.Items.Count > 1)
+            {
+                label.Text = "Касса №" + (Index + 2) + "\nКлиент-" + cust.getNumber();
+                ListKas1.Items.RemoveAt(0);
+                // крассный
+                kas_label[Index + 1].ForeColor = Color.DarkRed;
+                kas_timer[Index + 1].Enabled = true;
+            }
 
         }
         private void dgv_enter(Customer cust)
@@ -512,16 +488,16 @@ namespace Queues
             Pause_btn.BackColor = Color.DarkRed;
             Pause_btn.ForeColor = Color.White;
             regularTime_timer.Stop();
-            addClient_timer.Stop();      
+            addClient_timer.Stop();
+            listbox[0].Items.Clear();
+            custQueue[0].Clear();
             this.dgv_klient.Rows.Clear();
             time_label.Text = "Time";
             door_label.Text = "Door: " + "Close";
             custIndex = 1;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
-                kas_timer[i].Stop();
-                listbox[i].Items.Clear();           
-                custQueue[i].Clear();
+                kas_timer[i].Stop();                
                 kas_label[i].ForeColor = Color.GreenYellow;
                 kas_label[i].Text = "Касса №" + (i + 1);
             }
