@@ -28,3 +28,13 @@ C:\Users\Daniyar Baybolov\Desktop\Dir\Queues-main\obj\Debug\Queues.csproj.Genera
 C:\Users\Daniyar Baybolov\Desktop\Dir\Queues-main\obj\Debug\Queues.csproj.CoreCompileInputs.cache
 C:\Users\Daniyar Baybolov\Desktop\Dir\Queues-main\obj\Debug\Queues.exe
 C:\Users\Daniyar Baybolov\Desktop\Dir\Queues-main\obj\Debug\Queues.pdb
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\bin\Debug\Queues.exe.config
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\bin\Debug\Queues.exe
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\bin\Debug\Queues.pdb
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.csprojAssemblyReference.cache
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.Form1.resources
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.Properties.Resources.resources
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.csproj.GenerateResource.cache
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.exe
+C:\Users\Андрей\Desktop\Univers\AiCD\курс очереди\Queues-main\obj\Debug\Queues.pdb

@@ -147,6 +147,7 @@ namespace Queues
         bool labl = false;
         bool max = false;
 
+        Customer[] kasCust=new Customer[2];
         class Customer
         {
             private int number;
@@ -338,11 +339,11 @@ namespace Queues
                 }
             }
 
-            for(int i = 0; i < 1; i++)
+            for(int i = 0; i < 2; i++)
             {
                 Random x = new Random();
-                int n = (int)(x.Next(1000, 5000)/speed);
-                if (custQueue[i].Count != 0 && kas_timer[i].Enabled!=true)
+                int n = (int)(x.Next(2000, 5000)/speed);
+                if (custQueue[0].Count != 0 && kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
                     labael_enter(kas_label[i], i);
@@ -383,7 +384,7 @@ namespace Queues
             {
                 cust.setStatus(minIndex + 1);
                 custQueue[minIndex].Enqueue(cust);
-                listbox[minIndex].Items.Add(custIndex);
+                listbox[0].Items.Add(custIndex);
                 
             }
             else
@@ -412,9 +413,8 @@ namespace Queues
         private void kas_dgv(int kasIndex)
         {
             kasIndex--;
-            Customer cust = custQueue[0].Dequeue();
-            cust.setTimeStop(regularTime);
-            dgv_enter(cust);
+            kasCust[kasIndex].setTimeStop(regularTime);
+            dgv_enter(kasCust[kasIndex]);
             // зеленый
             kas_label[kasIndex].ForeColor = Color.GreenYellow;
             kas_label[kasIndex].Text = "Касса №" + (kasIndex + 1);
@@ -424,22 +424,22 @@ namespace Queues
         }
         private void labael_enter(Label label,int Index)
         {
-            Customer cust = custQueue[0].Peek();
+                kasCust[Index] = custQueue[0].Dequeue();
             
-                label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
-                listbox[Index].Items.RemoveAt(0);
+                label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + kasCust[Index].getNumber();
+                listbox[0].Items.RemoveAt(0);
                 // крассный
                 kas_label[Index].ForeColor = Color.DarkRed;
                 kas_timer[Index].Enabled = true;
 
-            if (ListKas1.Items.Count > 1)
-            {
-                label.Text = "Касса №" + (Index + 2) + "\nКлиент-" + cust.getNumber();
-                ListKas1.Items.RemoveAt(0);
-                // крассный
-                kas_label[Index + 1].ForeColor = Color.DarkRed;
-                kas_timer[Index + 1].Enabled = true;
-            }
+            //if (ListKas1.Items.Count > 1)
+            //{
+            //    label.Text = "Касса №" + (Index + 2) + "\nКлиент-" + kasCust[Index].getNumber();
+            //    ListKas1.Items.RemoveAt(0);
+            //    // крассный
+            //    kas_label[Index + 1].ForeColor = Color.DarkRed;
+            //    kas_timer[Index + 1].Enabled = true;
+            //}
 
         }
         private void dgv_enter(Customer cust)
