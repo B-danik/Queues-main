@@ -432,14 +432,7 @@ namespace Queues
                 kas_label[Index].ForeColor = Color.DarkRed;
                 kas_timer[Index].Enabled = true;
 
-            //if (ListKas1.Items.Count > 1)
-            //{
-            //    label.Text = "Касса №" + (Index + 2) + "\nКлиент-" + kasCust[Index].getNumber();
-            //    ListKas1.Items.RemoveAt(0);
-            //    // крассный
-            //    kas_label[Index + 1].ForeColor = Color.DarkRed;
-            //    kas_timer[Index + 1].Enabled = true;
-            //}
+
 
         }
         private void dgv_enter(Customer cust)
