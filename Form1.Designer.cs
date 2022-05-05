@@ -99,7 +99,7 @@ namespace Queues
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 705);
             this.panel1.TabIndex = 0;
@@ -235,7 +235,7 @@ namespace Queues
             this.btn_stop.Font = new System.Drawing.Font("Forte", 25.8F);
             this.btn_stop.ForeColor = System.Drawing.Color.Black;
             this.btn_stop.Location = new System.Drawing.Point(0, 519);
-            this.btn_stop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_stop.Margin = new System.Windows.Forms.Padding(4);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(259, 62);
             this.btn_stop.TabIndex = 10;
@@ -272,7 +272,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.stopbox.Location = new System.Drawing.Point(121, 181);
-            this.stopbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stopbox.Margin = new System.Windows.Forms.Padding(4);
             this.stopbox.Name = "stopbox";
             this.stopbox.Size = new System.Drawing.Size(140, 35);
             this.stopbox.TabIndex = 9;
@@ -306,7 +306,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.startbox.Location = new System.Drawing.Point(-4, 181);
-            this.startbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startbox.Margin = new System.Windows.Forms.Padding(4);
             this.startbox.Name = "startbox";
             this.startbox.Size = new System.Drawing.Size(124, 35);
             this.startbox.TabIndex = 8;
@@ -314,7 +314,7 @@ namespace Queues
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(-4, 140);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -325,7 +325,7 @@ namespace Queues
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(121, 140);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -373,7 +373,7 @@ namespace Queues
             this.Start_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Start_btn.ForeColor = System.Drawing.Color.Black;
             this.Start_btn.Location = new System.Drawing.Point(0, 581);
-            this.Start_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Start_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(259, 62);
             this.Start_btn.TabIndex = 3;
@@ -389,7 +389,7 @@ namespace Queues
             this.Pause_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Pause_btn.ForeColor = System.Drawing.Color.Black;
             this.Pause_btn.Location = new System.Drawing.Point(0, 643);
-            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Pause_btn.Name = "Pause_btn";
             this.Pause_btn.Size = new System.Drawing.Size(259, 62);
             this.Pause_btn.TabIndex = 2;
@@ -412,7 +412,7 @@ namespace Queues
             this.Column2});
             this.stsp_dgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.stsp_dgv.Location = new System.Drawing.Point(0, 141);
-            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.stsp_dgv.MultiSelect = false;
             this.stsp_dgv.Name = "stsp_dgv";
             this.stsp_dgv.RowHeadersVisible = false;
@@ -485,7 +485,7 @@ namespace Queues
             this.panel2.Controls.Add(this.Name_kas1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(259, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1090, 705);
             this.panel2.TabIndex = 1;
@@ -513,7 +513,7 @@ namespace Queues
             this.ListKas1.FormattingEnabled = true;
             this.ListKas1.ItemHeight = 77;
             this.ListKas1.Location = new System.Drawing.Point(195, 100);
-            this.ListKas1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas1.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas1.Name = "ListKas1";
             this.ListKas1.Size = new System.Drawing.Size(199, 541);
             this.ListKas1.TabIndex = 5;
@@ -539,7 +539,7 @@ namespace Queues
             this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(636, 100);
-            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_klient.Name = "dgv_klient";
             this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
@@ -613,7 +613,7 @@ namespace Queues
             this.ClientSize = new System.Drawing.Size(1349, 705);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
